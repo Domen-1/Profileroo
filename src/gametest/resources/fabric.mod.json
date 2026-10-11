@@ -1,0 +1,17 @@
+{
+	"schemaVersion": 1,
+	"id": "profileroo-test",
+	"version": "1.0.0",
+	"name": "Profileroo client tests",
+	"environment": "client",
+	"entrypoints": {
+		"fabric-client-gametest": [
+			"com.domen.profileroo.test.ProfilerooClientGameTest"
+		]
+	},
+	"depends": {
+		"profileroo": "*",
+		"tweakeroo": "*",
+		"minihud": "*"
+	}
+}

@@ -1,0 +1,99 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+version = "${project.mod_version}+${project.minecraft_version}"
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	maven {
+		name = 'Masa'
+		url = 'https://masa.dy.fi/maven/sakura-ryoko'
+		content { includeGroupAndSubgroups('fi.dy.masa') }
+	}
+	maven {
+		name = 'FallenBreath'
+		url = 'https://maven.fallenbreath.me/releases'
+		content { includeGroupAndSubgroups('me.fallenbreath') }
+	}
+	maven {
+		name = 'TerraformersMC'
+		url = 'https://maven.terraformersmc.com/releases'
+		content { includeGroup('com.terraformersmc') }
+	}
+}
+
+loom {
+	mods {
+		"profileroo" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+// ./gradlew runClientGameTest: opens a client window with Tweakeroo and MiniHUD, switches profiles on a dedicated
+// server and in singleplayer, takes screenshots of the screens (build/run/clientGameTest/screenshots). Needs a display.
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "profileroo-test"
+		enableGameTests = false
+		enableClientGameTests = true
+		eula = true
+	}
+}
+
+// Every run starts from a clean config folder: first start, default configs of Tweakeroo and MiniHUD.
+tasks.matching { it.name == "runClientGameTest" }.configureEach {
+	doFirst {
+		delete file("build/run/clientGameTest/config")
+		delete file("build/run/clientGameTest/screenshots")
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	implementation "fi.dy.masa.malilib:malilib-fabric-${project.minecraft_version}:${project.malilib_version}"
+	compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+	// The mod needs only MaLiLib; Fabric API is here for the dev client and the client game test.
+	runtimeOnly "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	gametestImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	gametestImplementation "fi.dy.masa.tweakeroo:tweakeroo-fabric-${project.minecraft_version}:${project.tweakeroo_version}"
+	gametestRuntimeOnly "fi.dy.masa.minihud:minihud-fabric-${project.minecraft_version}:${project.minihud_version}"
+
+	testImplementation platform("org.junit:junit-bom:5.13.4")
+	testImplementation "org.junit.jupiter:junit-jupiter"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": inputs.properties.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+	it.options.encoding = "UTF-8"
+}
+
+test {
+	useJUnitPlatform()
+}
+
+java {
+	withSourcesJar()
+
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}

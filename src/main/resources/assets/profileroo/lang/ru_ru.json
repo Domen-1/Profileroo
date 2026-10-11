@@ -1,0 +1,188 @@
+{
+	"profileroo.config.generic.name.autoSwitch": "Автопереключение",
+	"profileroo.config.generic.prettyName.autoSwitch": "Автопереключение",
+	"profileroo.config.generic.comment.autoSwitch": "При входе на сервер или в мир включать профиль\nпо правилам со вкладки «Серверы»",
+	"profileroo.config.generic.name.rememberManualChoice": "Запоминать ручной выбор",
+	"profileroo.config.generic.prettyName.rememberManualChoice": "Запоминать ручной выбор",
+	"profileroo.config.generic.comment.rememberManualChoice": "Если на сервере без правила вручную включить профиль,\nдобавить правило «этот сервер → этот профиль».\nСервер, для которого правило уже есть, не трогается.",
+	"profileroo.config.generic.name.messageOnJoin": "Сообщение при входе",
+	"profileroo.config.generic.prettyName.messageOnJoin": "Сообщение при входе",
+	"profileroo.config.generic.comment.messageOnJoin": "Где сообщать, что при входе включился другой профиль",
+	"profileroo.config.generic.name.messageOnSwitch": "Сообщение при переключении",
+	"profileroo.config.generic.prettyName.messageOnSwitch": "Сообщение при переключении",
+	"profileroo.config.generic.comment.messageOnSwitch": "Где сообщать о переключении хоткеем",
+	"profileroo.config.generic.name.sharedOptions": "Общие опции",
+	"profileroo.config.generic.prettyName.sharedOptions": "Общие опции",
+	"profileroo.config.generic.comment.sharedOptions": "Опции, одинаковые во всех профилях: при переключении они не меняются.\nСтрока: мод:Категория.опция, работают * и ?\n  tweakeroo:Generic.* — вся вкладка Generic Tweakeroo\n  *:TweakHotkeys — одни бинды везде, отличаются только тумблеры\n  minihud — весь MiniHUD\nСтрока с ! в начале исключает опции; срабатывает последняя подходящая.\nКатегории — ключи верхнего уровня в config/<мод>.json",
+	"profileroo.config.generic.name.debugLog": "Отладочный лог",
+	"profileroo.config.generic.prettyName.debugLog": "Отладочный лог",
+	"profileroo.config.generic.comment.debugLog": "Писать в лог, какие файлы конфигов нашлись у модов",
+
+	"profileroo.config.hotkey.name.openGui": "Открыть меню",
+	"profileroo.config.hotkey.prettyName.openGui": "Открыть меню",
+	"profileroo.config.hotkey.comment.openGui": "Открыть меню Profileroo",
+	"profileroo.config.hotkey.name.nextProfile": "Следующий профиль",
+	"profileroo.config.hotkey.prettyName.nextProfile": "Следующий профиль",
+	"profileroo.config.hotkey.comment.nextProfile": "Включить следующий профиль по списку",
+	"profileroo.config.hotkey.name.previousProfile": "Предыдущий профиль",
+	"profileroo.config.hotkey.prettyName.previousProfile": "Предыдущий профиль",
+	"profileroo.config.hotkey.comment.previousProfile": "Включить предыдущий профиль по списку",
+	"profileroo.config.hotkey.name.saveProfile": "Записать в профиль",
+	"profileroo.config.hotkey.prettyName.saveProfile": "Записать в профиль",
+	"profileroo.config.hotkey.comment.saveProfile": "Записать текущие настройки во включённый профиль,\nдаже если он закреплён",
+	"profileroo.config.hotkey.name.resetProfile": "Сбросить к сохранённому",
+	"profileroo.config.hotkey.prettyName.resetProfile": "Сбросить к сохранённому",
+	"profileroo.config.hotkey.comment.resetProfile": "Отменить изменения, сделанные после последнего сохранения\nвключённого профиля",
+
+	"profileroo.config.profile_hotkey.comment": "Включить профиль %s",
+
+	"profileroo.hotkeys.category.generic": "Основные хоткеи",
+	"profileroo.hotkeys.category.profiles": "Хоткеи профилей",
+
+	"profileroo.label.message_mode.none": "Нигде",
+	"profileroo.label.message_mode.actionbar": "Над хотбаром",
+	"profileroo.label.message_mode.message": "На экране",
+	"profileroo.label.message_mode.chat": "В чат",
+
+	"profileroo.label.locked_tag": "[закреплён]",
+
+	"profileroo.label.reason_rule": "правило %s",
+	"profileroo.label.no_rule": "без правила",
+
+	"profileroo.label.fallback.multiplayer": "сервер без правила",
+	"profileroo.label.fallback.singleplayer": "мир без правила",
+
+	"profileroo.message.switched": "Включён профиль §a%s",
+
+	"profileroo.message.switched_remembered": "Включён профиль §a%s§r — запомнил для %s",
+
+	"profileroo.message.join_switched": "Профиль §a%s§r (%s)",
+
+	"profileroo.message.join_reset": "Профиль §a%s§r закреплён — настройки вернулись к сохранённым",
+
+	"profileroo.message.already_active": "Профиль %s уже включён",
+
+	"profileroo.message.only_one_profile": "Профиль всего один — создайте ещё в меню (#profile gui)",
+
+	"profileroo.message.saved": "Текущие настройки записаны в профиль %s",
+
+	"profileroo.message.reset": "Профиль %s: несохранённые изменения отменены",
+
+	"profileroo.message.created": "Создан профиль %s — копия текущих настроек",
+
+	"profileroo.message.duplicated": "Профиль %s скопирован в %s",
+
+	"profileroo.message.renamed": "Профиль %s переименован в %s",
+
+	"profileroo.message.deleted": "Профиль %s удалён (папка перенесена в config/profileroo/trash), убрано правил: %s",
+
+	"profileroo.message.locked": "Профиль %s закреплён: изменения в игре в него не сохраняются, каждый вход начинается с сохранённых настроек",
+
+	"profileroo.message.unlocked": "Профиль %s откреплён: изменения снова сохраняются в него",
+
+	"profileroo.message.bound": "Правило: %s → %s",
+
+	"profileroo.message.unbound": "Правило для %s удалено",
+
+	"profileroo.message.no_exact_rule": "Правила именно для %s нет",
+
+	"profileroo.message.nothing_changed": "Ничего не изменилось",
+
+	"profileroo.message.error.no_such_profile": "Профиля %s нет",
+	"profileroo.message.error.io": "Ошибка файлов: %s",
+	"profileroo.message.error.name_empty": "Введите имя профиля",
+	"profileroo.message.error.name_too_long": "Имя %s длиннее %s символов",
+	"profileroo.message.error.name_chars": "Имя %s: только буквы, цифры и _ . + - без пробелов",
+	"profileroo.message.error.name_reserved": "Имя %s занято системой Windows",
+	"profileroo.message.error.name_taken": "Профиль %s уже есть",
+	"profileroo.message.error.delete_active": "Профиль %s включён — сначала переключитесь на другой",
+	"profileroo.message.error.not_connected": "Вы не на сервере и не в мире",
+	"profileroo.message.error.rule_profile_missing": "Правило ведёт на профиль %s, а его нет (%s)",
+
+	"profileroo.command.profiles": "Профили:",
+
+	"profileroo.command.here": "Здесь %s → профиль %s (%s)",
+
+	"profileroo.command.help_hint": "%s help — все команды",
+
+	"profileroo.command.usage": "Так: %s",
+
+	"profileroo.command.help": "#profile — профили и что включится здесь\n#profile <имя> — включить профиль\n#profile next | prev — следующий / предыдущий\n#profile save [имя] — записать текущие настройки в профиль\n#profile reset — отменить несохранённые изменения\n#profile create <имя> — новый профиль из текущих настроек\n#profile copy <из> <в> | rename <старое> <новое> | delete <имя>\n#profile lock [имя] | unlock [имя] — закрепить / открепить\n#profile bind [имя] — привязать этот сервер к профилю\n#profile unbind — убрать привязку этого сервера\n#profile gui — открыть меню",
+
+	"profileroo.gui.title.configs": "Profileroo %s",
+	"profileroo.gui.title.profiles": "Profileroo — профили",
+	"profileroo.gui.title.servers": "Profileroo — серверы",
+	"profileroo.gui.title.mods": "Profileroo — моды",
+	"profileroo.gui.title.rename": "Новое имя профиля",
+	"profileroo.gui.title.copy": "Имя копии",
+	"profileroo.gui.title.confirm_delete": "Удалить профиль?",
+	"profileroo.gui.title.confirm_save": "Перезаписать профиль?",
+	"profileroo.gui.title.add_rule": "Новое правило (адрес или шаблон)",
+	"profileroo.gui.title.edit_rule": "Шаблон правила",
+
+	"profileroo.gui.message.confirm_delete": "Профиль %s будет удалён вместе с правилами, которые на него ведут. Папка профиля переедет в config/profileroo/trash.",
+	"profileroo.gui.message.confirm_save": "В профиль %s запишутся текущие настройки всех модов, то, что в нём было, пропадёт.",
+
+	"profileroo.gui.button.tab.profiles": "Профили",
+	"profileroo.gui.button.tab.servers": "Серверы",
+	"profileroo.gui.button.tab.mods": "Моды",
+	"profileroo.gui.button.tab.generic": "Настройки",
+	"profileroo.gui.button.tab.hotkeys": "Хоткеи",
+	"profileroo.gui.button.tab.profile_hotkeys": "Хоткеи профилей",
+	"profileroo.gui.button.create": "Создать из текущих",
+	"profileroo.gui.button.open_folder": "Открыть папку",
+	"profileroo.gui.button.use": "Включить",
+	"profileroo.gui.button.in_use": "Включён",
+	"profileroo.gui.button.lock": "Закрепить",
+	"profileroo.gui.button.unlock": "Открепить",
+	"profileroo.gui.button.save_here": "Записать",
+	"profileroo.gui.button.copy": "Копия",
+	"profileroo.gui.button.rename": "Имя",
+	"profileroo.gui.button.delete": "Удалить",
+	"profileroo.gui.button.add_rule": "+ Правило",
+	"profileroo.gui.button.bind_current": "Этот сервер → %s",
+	"profileroo.gui.button.profile": "Профиль: %s",
+	"profileroo.gui.button.edit": "Шаблон",
+	"profileroo.gui.button.mod_included": "Переключается",
+	"profileroo.gui.button.mod_excluded": "Не трогать",
+
+	"profileroo.gui.label.active": "Включён: %s",
+	"profileroo.gui.label.not_in_world": "не в мире",
+	"profileroo.gui.label.here": "здесь %s → %s %s",
+	"profileroo.gui.label.by_rule": "(правило %s)",
+	"profileroo.gui.label.by_fallback": "(без правила)",
+	"profileroo.gui.label.keep_current": "не переключать",
+	"profileroo.gui.label.rule_count": "правил: %s",
+	"profileroo.gui.label.applies_here": "работает здесь",
+	"profileroo.gui.label.empty_pattern": "(пустой шаблон)",
+	"profileroo.gui.label.fallback.multiplayer": "Остальные серверы, LAN и Realms",
+	"profileroo.gui.label.fallback.singleplayer": "Остальные одиночные миры",
+	"profileroo.gui.label.no_files": "файлов конфига нет",
+	"profileroo.gui.label.mods_help_1": "Моды на MaLiLib с настройками. «Переключается» — профиль хранит и меняет его конфиг.",
+	"profileroo.gui.label.mods_help_2": "Отдельные опции, общие для всех профилей, — во вкладке «Настройки» (Общие опции).",
+
+	"profileroo.gui.hover.new_profile_name": "Имя нового профиля: буквы, цифры, _ . + -",
+	"profileroo.gui.hover.create": "Новый профиль — копия текущих настроек всех модов.\nВключённый профиль при этом не меняется.",
+	"profileroo.gui.hover.use": "Включить этот профиль: текущие настройки сохранятся\nв нынешний профиль, моды загрузят настройки этого",
+	"profileroo.gui.hover.lock": "Закреплённый профиль не запоминает изменения из игры:\nпри каждом входе настройки возвращаются к сохранённым.\nОбновить его можно кнопкой «Записать».",
+	"profileroo.gui.hover.save_here": "Записать в этот профиль текущие настройки модов",
+	"profileroo.gui.hover.copy": "Копия профиля под новым именем",
+	"profileroo.gui.hover.delete": "Удалить профиль (папка переедет в config/profileroo/trash)",
+	"profileroo.gui.hover.delete_active": "Включённый профиль удалить нельзя — сначала переключитесь",
+	"profileroo.gui.hover.move": "Порядок профилей — для хоткеев «следующий / предыдущий»",
+	"profileroo.gui.hover.profile_mods": "Моды в профиле: %s",
+	"profileroo.gui.hover.profile_rules": "Серверы: %s",
+	"profileroo.gui.hover.fallback_multiplayer": "Включается на серверах без правила",
+	"profileroo.gui.hover.fallback_singleplayer": "Включается в одиночных мирах без правила",
+	"profileroo.gui.hover.locked": "Закреплён: изменения из игры не сохраняются",
+	"profileroo.gui.hover.pattern_help": "Правила проверяются сверху вниз, срабатывает первое.\nplay.example.com — этот сервер, любой порт\nplay.example.com:25566 — сервер и порт\n*.example.com, 192.168.1.* — маски, * и ?\nname:SMP* — по имени в списке серверов\nsp — любой одиночный мир, sp:Креатив* — по имени мира\nlan — игра по сети, realms или realms:<имя> — Realms",
+	"profileroo.gui.hover.rule_matches": "Подходит к %s",
+	"profileroo.gui.hover.rule_no_match": "Не подходит к %s",
+	"profileroo.gui.hover.cycle_profile": "ЛКМ — следующий профиль, ПКМ — предыдущий",
+	"profileroo.gui.hover.fallback": "Если ни одно правило не подошло. «Не переключать» — оставить профиль, который включён.",
+	"profileroo.gui.hover.bind_current": "Добавить наверх правило %s → включённый профиль",
+	"profileroo.gui.hover.bind_current_offline": "Работает, когда вы на сервере или в мире",
+	"profileroo.gui.hover.mod_toggle": "«Не трогать» — профили не сохраняют и не меняют настройки этого мода",
+	"profileroo.gui.hover.mod_in_active": "Настройки мода есть во включённом профиле %s",
+	"profileroo.gui.hover.mod_not_in_active": "Во включённом профиле %s настроек этого мода пока нет — появятся при следующем сохранении"
+}

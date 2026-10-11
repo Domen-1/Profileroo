@@ -1,0 +1,17 @@
+{
+	"required": true,
+	"package": "com.domen.profileroo.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"ClientLevelAccessor",
+		"ConfigManagerAccessor",
+		"FileUtilsMixin",
+		"MinecraftMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

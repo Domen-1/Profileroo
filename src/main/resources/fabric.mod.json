@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "profileroo",
+	"version": "${version}",
+	"name": "Profileroo",
+	"description": "Profiles of binds and settings for Tweakeroo, MiniHUD, Litematica and other MaLiLib mods. Each server gets its own profile, switched automatically on join.",
+	"authors": [
+		"__domen__"
+	],
+	"license": "All-Rights-Reserved",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"com.domen.profileroo.Profileroo"
+		],
+		"modmenu": [
+			"com.domen.profileroo.compat.ModMenuImpl"
+		]
+	},
+	"mixins": [
+		"profileroo.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"malilib": ">=0.30.0- <0.31.0-"
+	},
+	"suggests": {
+		"tweakeroo": "*",
+		"minihud": "*",
+		"litematica": "*",
+		"itemscroller": "*"
+	}
+}

@@ -1,0 +1,188 @@
+{
+	"profileroo.config.generic.name.autoSwitch": "Auto switch",
+	"profileroo.config.generic.prettyName.autoSwitch": "Auto switch",
+	"profileroo.config.generic.comment.autoSwitch": "On joining a server or a world, switch to the profile\ngiven by the rules on the \"Servers\" tab",
+	"profileroo.config.generic.name.rememberManualChoice": "Remember manual choice",
+	"profileroo.config.generic.prettyName.rememberManualChoice": "Remember manual choice",
+	"profileroo.config.generic.comment.rememberManualChoice": "Switching profiles by hand on a server without a rule\nadds a rule \"this server -> this profile\".\nServers that already have a rule are left alone.",
+	"profileroo.config.generic.name.messageOnJoin": "Message on join",
+	"profileroo.config.generic.prettyName.messageOnJoin": "Message on join",
+	"profileroo.config.generic.comment.messageOnJoin": "Where to say that joining switched the profile",
+	"profileroo.config.generic.name.messageOnSwitch": "Message on switch",
+	"profileroo.config.generic.prettyName.messageOnSwitch": "Message on switch",
+	"profileroo.config.generic.comment.messageOnSwitch": "Where to say that a hotkey switched the profile",
+	"profileroo.config.generic.name.sharedOptions": "Shared options",
+	"profileroo.config.generic.prettyName.sharedOptions": "Shared options",
+	"profileroo.config.generic.comment.sharedOptions": "Options that are the same in every profile: switching never changes them.\nA line is mod:Category.option, * and ? work:\n  tweakeroo:Generic.* - the whole Generic tab of Tweakeroo\n  *:TweakHotkeys - the same binds everywhere, only the toggles differ\n  minihud - all of MiniHUD\nA line starting with ! takes options out; the last matching line wins.\nCategories are the top level keys in config/<mod>.json",
+	"profileroo.config.generic.name.debugLog": "Debug log",
+	"profileroo.config.generic.prettyName.debugLog": "Debug log",
+	"profileroo.config.generic.comment.debugLog": "Log which config files were found for each mod",
+
+	"profileroo.config.hotkey.name.openGui": "Open menu",
+	"profileroo.config.hotkey.prettyName.openGui": "Open menu",
+	"profileroo.config.hotkey.comment.openGui": "Open the Profileroo menu",
+	"profileroo.config.hotkey.name.nextProfile": "Next profile",
+	"profileroo.config.hotkey.prettyName.nextProfile": "Next profile",
+	"profileroo.config.hotkey.comment.nextProfile": "Switch to the next profile in the list",
+	"profileroo.config.hotkey.name.previousProfile": "Previous profile",
+	"profileroo.config.hotkey.prettyName.previousProfile": "Previous profile",
+	"profileroo.config.hotkey.comment.previousProfile": "Switch to the previous profile in the list",
+	"profileroo.config.hotkey.name.saveProfile": "Save into profile",
+	"profileroo.config.hotkey.prettyName.saveProfile": "Save into profile",
+	"profileroo.config.hotkey.comment.saveProfile": "Save the current settings into the active profile,\neven if it is locked",
+	"profileroo.config.hotkey.name.resetProfile": "Reset to saved",
+	"profileroo.config.hotkey.prettyName.resetProfile": "Reset to saved",
+	"profileroo.config.hotkey.comment.resetProfile": "Throw away the changes made since the active profile\nwas last saved",
+
+	"profileroo.config.profile_hotkey.comment": "Switch to profile %s",
+
+	"profileroo.hotkeys.category.generic": "Hotkeys",
+	"profileroo.hotkeys.category.profiles": "Profile hotkeys",
+
+	"profileroo.label.message_mode.none": "Nowhere",
+	"profileroo.label.message_mode.actionbar": "Action bar",
+	"profileroo.label.message_mode.message": "On screen",
+	"profileroo.label.message_mode.chat": "Chat",
+
+	"profileroo.label.locked_tag": "[locked]",
+
+	"profileroo.label.reason_rule": "rule %s",
+	"profileroo.label.no_rule": "no rule",
+
+	"profileroo.label.fallback.multiplayer": "server without a rule",
+	"profileroo.label.fallback.singleplayer": "world without a rule",
+
+	"profileroo.message.switched": "Profile §a%s§r is on",
+
+	"profileroo.message.switched_remembered": "Profile §a%s§r is on and remembered for %s",
+
+	"profileroo.message.join_switched": "Profile §a%s§r (%s)",
+
+	"profileroo.message.join_reset": "Profile §a%s§r is locked - settings are back to the saved ones",
+
+	"profileroo.message.already_active": "Profile %s is already on",
+
+	"profileroo.message.only_one_profile": "There is only one profile - create more in the menu (#profile gui)",
+
+	"profileroo.message.saved": "Current settings saved into profile %s",
+
+	"profileroo.message.reset": "Profile %s: unsaved changes thrown away",
+
+	"profileroo.message.created": "Profile %s created as a copy of the current settings",
+
+	"profileroo.message.duplicated": "Profile %s copied to %s",
+
+	"profileroo.message.renamed": "Profile %s renamed to %s",
+
+	"profileroo.message.deleted": "Profile %s deleted (its folder went to config/profileroo/trash), rules removed: %s",
+
+	"profileroo.message.locked": "Profile %s locked: changes made in game are not saved into it, every join starts from the saved settings",
+
+	"profileroo.message.unlocked": "Profile %s unlocked: changes are saved into it again",
+
+	"profileroo.message.bound": "Rule: %s -> %s",
+
+	"profileroo.message.unbound": "Rule for %s removed",
+
+	"profileroo.message.no_exact_rule": "There is no rule exactly for %s",
+
+	"profileroo.message.nothing_changed": "Nothing changed",
+
+	"profileroo.message.error.no_such_profile": "There is no profile %s",
+	"profileroo.message.error.io": "File error: %s",
+	"profileroo.message.error.name_empty": "Enter a profile name",
+	"profileroo.message.error.name_too_long": "Name %s is longer than %s characters",
+	"profileroo.message.error.name_chars": "Name %s: letters, digits and _ . + - only, no spaces",
+	"profileroo.message.error.name_reserved": "Name %s is reserved by Windows",
+	"profileroo.message.error.name_taken": "Profile %s already exists",
+	"profileroo.message.error.delete_active": "Profile %s is on - switch to another one first",
+	"profileroo.message.error.not_connected": "You are not on a server or in a world",
+	"profileroo.message.error.rule_profile_missing": "A rule points to profile %s, which does not exist (%s)",
+
+	"profileroo.command.profiles": "Profiles:",
+
+	"profileroo.command.here": "Here %s -> profile %s (%s)",
+
+	"profileroo.command.help_hint": "%s help - all commands",
+
+	"profileroo.command.usage": "Usage: %s",
+
+	"profileroo.command.help": "#profile - profiles and what applies here\n#profile <name> - switch to a profile\n#profile next | prev - next / previous profile\n#profile save [name] - save the current settings into a profile\n#profile reset - throw away unsaved changes\n#profile create <name> - new profile from the current settings\n#profile copy <from> <to> | rename <old> <new> | delete <name>\n#profile lock [name] | unlock [name]\n#profile bind [name] - bind this server to a profile\n#profile unbind - remove this server's rule\n#profile gui - open the menu",
+
+	"profileroo.gui.title.configs": "Profileroo %s",
+	"profileroo.gui.title.profiles": "Profileroo - profiles",
+	"profileroo.gui.title.servers": "Profileroo - servers",
+	"profileroo.gui.title.mods": "Profileroo - mods",
+	"profileroo.gui.title.rename": "New profile name",
+	"profileroo.gui.title.copy": "Name of the copy",
+	"profileroo.gui.title.confirm_delete": "Delete the profile?",
+	"profileroo.gui.title.confirm_save": "Overwrite the profile?",
+	"profileroo.gui.title.add_rule": "New rule (address or pattern)",
+	"profileroo.gui.title.edit_rule": "Rule pattern",
+
+	"profileroo.gui.message.confirm_delete": "Profile %s will be deleted together with the rules that point to it. Its folder goes to config/profileroo/trash.",
+	"profileroo.gui.message.confirm_save": "Profile %s gets the current settings of all mods, what it had is lost.",
+
+	"profileroo.gui.button.tab.profiles": "Profiles",
+	"profileroo.gui.button.tab.servers": "Servers",
+	"profileroo.gui.button.tab.mods": "Mods",
+	"profileroo.gui.button.tab.generic": "Settings",
+	"profileroo.gui.button.tab.hotkeys": "Hotkeys",
+	"profileroo.gui.button.tab.profile_hotkeys": "Profile hotkeys",
+	"profileroo.gui.button.create": "Create from current",
+	"profileroo.gui.button.open_folder": "Open folder",
+	"profileroo.gui.button.use": "Use",
+	"profileroo.gui.button.in_use": "In use",
+	"profileroo.gui.button.lock": "Lock",
+	"profileroo.gui.button.unlock": "Unlock",
+	"profileroo.gui.button.save_here": "Save here",
+	"profileroo.gui.button.copy": "Copy",
+	"profileroo.gui.button.rename": "Rename",
+	"profileroo.gui.button.delete": "Delete",
+	"profileroo.gui.button.add_rule": "+ Rule",
+	"profileroo.gui.button.bind_current": "This server -> %s",
+	"profileroo.gui.button.profile": "Profile: %s",
+	"profileroo.gui.button.edit": "Pattern",
+	"profileroo.gui.button.mod_included": "Switched",
+	"profileroo.gui.button.mod_excluded": "Left alone",
+
+	"profileroo.gui.label.active": "On: %s",
+	"profileroo.gui.label.not_in_world": "not in a world",
+	"profileroo.gui.label.here": "here %s -> %s %s",
+	"profileroo.gui.label.by_rule": "(rule %s)",
+	"profileroo.gui.label.by_fallback": "(no rule)",
+	"profileroo.gui.label.keep_current": "keep current",
+	"profileroo.gui.label.rule_count": "rules: %s",
+	"profileroo.gui.label.applies_here": "applies here",
+	"profileroo.gui.label.empty_pattern": "(empty pattern)",
+	"profileroo.gui.label.fallback.multiplayer": "Other servers, LAN and Realms",
+	"profileroo.gui.label.fallback.singleplayer": "Other singleplayer worlds",
+	"profileroo.gui.label.no_files": "no config files",
+	"profileroo.gui.label.mods_help_1": "MaLiLib mods with settings. \"Switched\" - profiles keep and change its config.",
+	"profileroo.gui.label.mods_help_2": "Single options shared by all profiles are on the \"Settings\" tab (Shared options).",
+
+	"profileroo.gui.hover.new_profile_name": "Name of the new profile: letters, digits, _ . + -",
+	"profileroo.gui.hover.create": "A new profile as a copy of the current settings of all mods.\nThe profile in use stays the same.",
+	"profileroo.gui.hover.use": "Switch to this profile: the current settings are saved\ninto the profile in use, the mods load this one",
+	"profileroo.gui.hover.lock": "A locked profile does not remember changes made in game:\nevery join brings the saved settings back.\nUpdate it with \"Save here\".",
+	"profileroo.gui.hover.save_here": "Save the current settings of the mods into this profile",
+	"profileroo.gui.hover.copy": "Copy the profile under a new name",
+	"profileroo.gui.hover.delete": "Delete the profile (its folder goes to config/profileroo/trash)",
+	"profileroo.gui.hover.delete_active": "The profile in use cannot be deleted - switch first",
+	"profileroo.gui.hover.move": "Profile order, for the next / previous hotkeys",
+	"profileroo.gui.hover.profile_mods": "Mods in the profile: %s",
+	"profileroo.gui.hover.profile_rules": "Servers: %s",
+	"profileroo.gui.hover.fallback_multiplayer": "Used on servers without a rule",
+	"profileroo.gui.hover.fallback_singleplayer": "Used in singleplayer worlds without a rule",
+	"profileroo.gui.hover.locked": "Locked: changes made in game are not saved",
+	"profileroo.gui.hover.pattern_help": "Rules are checked top to bottom, the first match wins.\nplay.example.com - this server, any port\nplay.example.com:25566 - server and port\n*.example.com, 192.168.1.* - masks with * and ?\nname:SMP* - by the name in the server list\nsp - any singleplayer world, sp:Creative* - by world name\nlan - LAN games, realms or realms:<name> - Realms",
+	"profileroo.gui.hover.rule_matches": "Matches %s",
+	"profileroo.gui.hover.rule_no_match": "Does not match %s",
+	"profileroo.gui.hover.cycle_profile": "Left click - next profile, right click - previous",
+	"profileroo.gui.hover.fallback": "When no rule matches. \"Keep current\" leaves the profile that is on.",
+	"profileroo.gui.hover.bind_current": "Put a rule %s -> the profile in use at the top",
+	"profileroo.gui.hover.bind_current_offline": "Works when you are on a server or in a world",
+	"profileroo.gui.hover.mod_toggle": "\"Left alone\" - profiles neither save nor change this mod's settings",
+	"profileroo.gui.hover.mod_in_active": "The profile in use (%s) has this mod's settings",
+	"profileroo.gui.hover.mod_not_in_active": "The profile in use (%s) has no settings of this mod yet - they come with the next save"
+}
