@@ -59,6 +59,7 @@ public class GuiProfiles extends GuiRowListBase<ProfileData> {
 			ProfileManager manager = ProfileManager.getInstance();
 			new FileOpener(manager.store().configDir()).openPath(manager.store().profilesDir());
 		});
+		this.addAutoSwitchButton(folder.getX() - 4, y);
 	}
 
 	@Override

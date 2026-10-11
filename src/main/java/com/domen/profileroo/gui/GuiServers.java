@@ -51,6 +51,8 @@ public class GuiServers extends GuiRowListBase<GuiServers.Entry> {
 			this.show(manager.bindCurrent(null));
 			this.refresh();
 		});
+
+		this.addAutoSwitchButton(this.getScreenWidth() - 12, y);
 	}
 
 	@Override
@@ -171,12 +173,15 @@ public class GuiServers extends GuiRowListBase<GuiServers.Entry> {
 					GuiServers.this.refresh();
 				}, cycleHover);
 			}
-			this.setHighlighted(this.decisive);
+			this.setHighlighted(this.decisive && manager.isAutoSwitch());
 		}
 
 		@Override
 		protected String text() {
-			String mark = this.decisive ? GuiBase.TXT_GREEN + "  ◀ " + StringUtils.translate("profileroo.gui.label.applies_here") : "";
+			String mark = !this.decisive ? ""
+					: ProfileManager.getInstance().isAutoSwitch()
+					? GuiBase.TXT_GREEN + "  ◀ " + StringUtils.translate("profileroo.gui.label.applies_here")
+					: GuiBase.TXT_GRAY + "  ◀ " + StringUtils.translate("profileroo.gui.label.would_apply_here");
 			if (this.rowEntry instanceof RuleEntry(int ruleIndex, ServerRule rule)) {
 				String pattern = rule.pattern.isEmpty() ? GuiBase.TXT_RED + StringUtils.translate("profileroo.gui.label.empty_pattern") : rule.pattern;
 				return GuiBase.TXT_GRAY + (ruleIndex + 1) + ". " + GuiBase.TXT_WHITE + pattern + mark;

@@ -48,13 +48,15 @@ public class Configs implements IConfigHandler {
 		public static final ConfigHotkey PREVIOUS_PROFILE = new ConfigHotkey("previousProfile", "").apply(KEY);
 		public static final ConfigHotkey SAVE_PROFILE = new ConfigHotkey("saveProfile", "").apply(KEY);
 		public static final ConfigHotkey RESET_PROFILE = new ConfigHotkey("resetProfile", "").apply(KEY);
+		public static final ConfigHotkey TOGGLE_AUTO_SWITCH = new ConfigHotkey("toggleAutoSwitch", "").apply(KEY);
 
 		public static final ImmutableList<ConfigHotkey> HOTKEY_LIST = ImmutableList.of(
 				OPEN_GUI,
 				NEXT_PROFILE,
 				PREVIOUS_PROFILE,
 				SAVE_PROFILE,
-				RESET_PROFILE
+				RESET_PROFILE,
+				TOGGLE_AUTO_SWITCH
 		);
 	}
 

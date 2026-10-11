@@ -255,7 +255,9 @@ public final class ProfileManager {
 			return OpResult.info("profileroo.message.already_active", target.name);
 		}
 		OpResult result = this.doSwitch(target, cause != Cause.JOIN);
-		if (result.ok() && cause != Cause.JOIN && this.session != null && Configs.Generic.REMEMBER_MANUAL_CHOICE.getBooleanValue()) {
+		// Remembered rules only matter when joining switches profiles, so nothing is remembered while that is off.
+		if (result.ok() && cause != Cause.JOIN && this.session != null && Configs.Generic.REMEMBER_MANUAL_CHOICE.getBooleanValue()
+				&& Configs.Generic.AUTO_SWITCH.getBooleanValue()) {
 			Resolution resolution = this.state.resolve(this.session);
 			// Only where no rule decides: an explicit rule is the player's word and a manual switch may be temporary.
 			if (resolution.isFallback() && !target.name.equalsIgnoreCase(String.valueOf(resolution.profile()))) {
@@ -265,6 +267,19 @@ public final class ProfileManager {
 			}
 		}
 		return result;
+	}
+
+	public boolean isAutoSwitch() {
+		return Configs.Generic.AUTO_SWITCH.getBooleanValue();
+	}
+
+	/** Turns switching on join on or off; manual switching keeps working either way. */
+	public OpResult setAutoSwitch(boolean enabled) {
+		Configs.Generic.AUTO_SWITCH.setBooleanValue(enabled);
+		Configs.saveToFile();
+		return enabled
+				? OpResult.success("profileroo.message.auto_on")
+				: OpResult.warning("profileroo.message.auto_off");
 	}
 
 	public void switchByHotkey(String name) {

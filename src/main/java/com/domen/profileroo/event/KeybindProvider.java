@@ -57,6 +57,8 @@ public class KeybindProvider implements IKeybindProvider, IHotkeyCallback {
 			result = manager.saveActive();
 		} else if (key == Configs.Hotkeys.RESET_PROFILE.getKeybind()) {
 			result = manager.resetActive();
+		} else if (key == Configs.Hotkeys.TOGGLE_AUTO_SWITCH.getKeybind()) {
+			result = manager.setAutoSwitch(!manager.isAutoSwitch());
 		} else {
 			return false;
 		}

@@ -1,7 +1,7 @@
 {
 	"profileroo.config.generic.name.autoSwitch": "Auto switch",
 	"profileroo.config.generic.prettyName.autoSwitch": "Auto switch",
-	"profileroo.config.generic.comment.autoSwitch": "On joining a server or a world, switch to the profile\ngiven by the rules on the \"Servers\" tab",
+	"profileroo.config.generic.comment.autoSwitch": "On joining a server or a world, switch to the profile\ngiven by the rules on the \"Servers\" tab.\nOff - profiles change only by hand.",
 	"profileroo.config.generic.name.rememberManualChoice": "Remember manual choice",
 	"profileroo.config.generic.prettyName.rememberManualChoice": "Remember manual choice",
 	"profileroo.config.generic.comment.rememberManualChoice": "Switching profiles by hand on a server without a rule\nadds a rule \"this server -> this profile\".\nServers that already have a rule are left alone.",
@@ -33,6 +33,9 @@
 	"profileroo.config.hotkey.name.resetProfile": "Reset to saved",
 	"profileroo.config.hotkey.prettyName.resetProfile": "Reset to saved",
 	"profileroo.config.hotkey.comment.resetProfile": "Throw away the changes made since the active profile\nwas last saved",
+	"profileroo.config.hotkey.name.toggleAutoSwitch": "Toggle auto switch",
+	"profileroo.config.hotkey.prettyName.toggleAutoSwitch": "Toggle auto switch",
+	"profileroo.config.hotkey.comment.toggleAutoSwitch": "Turn switching profiles on join on or off.\nSwitching by hand always works.",
 
 	"profileroo.config.profile_hotkey.comment": "Switch to profile %s",
 
@@ -79,6 +82,8 @@
 	"profileroo.message.locked": "Profile %s locked: changes made in game are not saved into it, every join starts from the saved settings",
 
 	"profileroo.message.unlocked": "Profile %s unlocked: changes are saved into it again",
+	"profileroo.message.auto_on": "Auto switch is on: joining picks the profile by the rules",
+	"profileroo.message.auto_off": "Auto switch is off: profiles change only by hand",
 
 	"profileroo.message.bound": "Rule: %s -> %s",
 
@@ -104,10 +109,11 @@
 	"profileroo.command.here": "Here %s -> profile %s (%s)",
 
 	"profileroo.command.help_hint": "%s help - all commands",
+	"profileroo.command.auto_off_note": "Auto switch is off - turn it on: %s auto on",
 
 	"profileroo.command.usage": "Usage: %s",
 
-	"profileroo.command.help": "#profile - profiles and what applies here\n#profile <name> - switch to a profile\n#profile next | prev - next / previous profile\n#profile save [name] - save the current settings into a profile\n#profile reset - throw away unsaved changes\n#profile create <name> - new profile from the current settings\n#profile copy <from> <to> | rename <old> <new> | delete <name>\n#profile lock [name] | unlock [name]\n#profile bind [name] - bind this server to a profile\n#profile unbind - remove this server's rule\n#profile gui - open the menu",
+	"profileroo.command.help": "#profile - profiles and what applies here\n#profile <name> - switch to a profile\n#profile next | prev - next / previous profile\n#profile save [name] - save the current settings into a profile\n#profile reset - throw away unsaved changes\n#profile create <name> - new profile from the current settings\n#profile copy <from> <to> | rename <old> <new> | delete <name>\n#profile lock [name] | unlock [name]\n#profile auto [on|off] - switching on join\n#profile bind [name] - bind this server to a profile\n#profile unbind - remove this server's rule\n#profile gui - open the menu",
 
 	"profileroo.gui.title.configs": "Profileroo %s",
 	"profileroo.gui.title.profiles": "Profileroo - profiles",
@@ -145,6 +151,7 @@
 	"profileroo.gui.button.edit": "Pattern",
 	"profileroo.gui.button.mod_included": "Switched",
 	"profileroo.gui.button.mod_excluded": "Left alone",
+	"profileroo.gui.button.auto_switch": "Auto switch: %s",
 
 	"profileroo.gui.label.active": "On: %s",
 	"profileroo.gui.label.not_in_world": "not in a world",
@@ -154,6 +161,10 @@
 	"profileroo.gui.label.keep_current": "keep current",
 	"profileroo.gui.label.rule_count": "rules: %s",
 	"profileroo.gui.label.applies_here": "applies here",
+	"profileroo.gui.label.on": "on",
+	"profileroo.gui.label.off": "off",
+	"profileroo.gui.label.auto_off": "auto switch is off",
+	"profileroo.gui.label.would_apply_here": "would apply here",
 	"profileroo.gui.label.empty_pattern": "(empty pattern)",
 	"profileroo.gui.label.fallback.multiplayer": "Other servers, LAN and Realms",
 	"profileroo.gui.label.fallback.singleplayer": "Other singleplayer worlds",
@@ -182,6 +193,7 @@
 	"profileroo.gui.hover.fallback": "When no rule matches. \"Keep current\" leaves the profile that is on.",
 	"profileroo.gui.hover.bind_current": "Put a rule %s -> the profile in use at the top",
 	"profileroo.gui.hover.bind_current_offline": "Works when you are on a server or in a world",
+	"profileroo.gui.hover.auto_switch": "On - joining a server or a world picks the profile by the rules.\nOff - profiles change only by hand: the buttons, hotkeys or #profile.\nThere is also a \"Toggle auto switch\" hotkey and #profile auto.",
 	"profileroo.gui.hover.mod_toggle": "\"Left alone\" - profiles neither save nor change this mod's settings",
 	"profileroo.gui.hover.mod_in_active": "The profile in use (%s) has this mod's settings",
 	"profileroo.gui.hover.mod_not_in_active": "The profile in use (%s) has no settings of this mod yet - they come with the next save"

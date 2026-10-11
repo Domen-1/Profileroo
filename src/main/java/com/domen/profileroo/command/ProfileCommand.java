@@ -11,6 +11,7 @@ import fi.dy.masa.malilib.interfaces.IClientCommandListener;
 import fi.dy.masa.malilib.util.StringUtils;
 import java.util.List;
 import java.util.Locale;
+import org.jetbrains.annotations.Nullable;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -64,6 +65,7 @@ public class ProfileCommand implements IClientCommandListener {
 			case "delete", "remove" -> a == null ? usage("delete <name>") : manager.delete(a);
 			case "lock" -> manager.setLocked(a == null ? manager.activeName() : a, true);
 			case "unlock" -> manager.setLocked(a == null ? manager.activeName() : a, false);
+			case "auto" -> this.auto(manager, a);
 			case "bind" -> manager.bindCurrent(a);
 			case "unbind" -> manager.unbindCurrent();
 			// "#profile smp" is the short form of "#profile switch smp".
@@ -73,6 +75,18 @@ public class ProfileCommand implements IClientCommandListener {
 			Messages.chat(result);
 		}
 		return true;
+	}
+
+	/** {@code #profile auto} toggles, {@code #profile auto on|off} sets. */
+	private OpResult auto(ProfileManager manager, @Nullable String arg) {
+		if (arg == null) {
+			return manager.setAutoSwitch(!manager.isAutoSwitch());
+		}
+		return switch (arg.toLowerCase(Locale.ROOT)) {
+			case "on", "true", "вкл", "1" -> manager.setAutoSwitch(true);
+			case "off", "false", "выкл", "0" -> manager.setAutoSwitch(false);
+			default -> usage("auto [on|off]");
+		};
 	}
 
 	private static OpResult usage(String usage) {
@@ -98,6 +112,9 @@ public class ProfileCommand implements IClientCommandListener {
 					: StringUtils.translate("profileroo.label.reason_rule", resolution.rule().pattern);
 			String profile = resolution == null || resolution.profile() == null ? "—" : resolution.profile();
 			Messages.chat(Component.literal(StringUtils.translate("profileroo.command.here", session.label(), profile, by)).withStyle(ChatFormatting.GRAY));
+		}
+		if (!manager.isAutoSwitch()) {
+			Messages.chat(Component.literal(StringUtils.translate("profileroo.command.auto_off_note", COMMAND)).withStyle(ChatFormatting.GOLD));
 		}
 		Messages.chat(Component.literal(StringUtils.translate("profileroo.command.help_hint", COMMAND)).withStyle(ChatFormatting.DARK_GRAY));
 	}

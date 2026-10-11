@@ -221,7 +221,41 @@ public class ProfilerooClientGameTest implements FabricClientGameTest {
 			}
 			try (TestDedicatedServerConnection connection = server.connect()) {
 				connection.waitForChunksRender();
-				context.runOnClient(mc -> check(ProfileManager.getInstance().activeName().equals("cmp"), "the remembered rule works on the next join"));
+				context.runOnClient(mc -> {
+					ProfileManager manager = ProfileManager.getInstance();
+					check(manager.activeName().equals("cmp"), "the remembered rule works on the next join");
+					check(ClientCommandHandler.INSTANCE.onSendClientMessage("#profile auto off", mc) && !manager.isAutoSwitch(),
+							"#profile auto off turns switching on join off");
+					ok(manager.switchTo("default", ProfileManager.Cause.MANUAL), "manual switch with auto switch off");
+				});
+			}
+
+			// Auto switch off: the rule for this server still says cmp, but joining keeps the profile in use.
+			try (TestDedicatedServerConnection connection = server.connect()) {
+				connection.waitForChunksRender();
+				context.runOnClient(mc -> {
+					check(ProfileManager.getInstance().activeName().equals("default"), "with auto switch off the rule does not apply on join");
+					if (!mc.gui.hud.isHidden()) {
+						mc.gui.hud.toggle();
+					}
+				});
+				context.setScreen(() -> ConfigTab.SERVERS.create(null));
+				context.waitTicks(3);
+				shot(context, "screen-servers-auto-off");
+				context.setScreen(() -> null);
+				context.runOnClient(mc -> {
+					if (mc.gui.hud.isHidden()) {
+						mc.gui.hud.toggle();
+					}
+					ProfileManager manager = ProfileManager.getInstance();
+					check(ClientCommandHandler.INSTANCE.onSendClientMessage("#profile auto", mc) && manager.isAutoSwitch(),
+							"#profile auto toggles switching on join back on");
+					check(Configs.Hotkeys.HOTKEY_LIST.contains(Configs.Hotkeys.TOGGLE_AUTO_SWITCH), "the toggle has a hotkey");
+				});
+			}
+			try (TestDedicatedServerConnection connection = server.connect()) {
+				connection.waitForChunksRender();
+				context.runOnClient(mc -> check(ProfileManager.getInstance().activeName().equals("cmp"), "with auto switch on again the rule applies"));
 			}
 			context.runOnClient(mc -> ProfileManager.getInstance().setFallback(false, "default"));
 		}

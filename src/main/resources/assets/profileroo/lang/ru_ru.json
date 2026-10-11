@@ -1,7 +1,7 @@
 {
 	"profileroo.config.generic.name.autoSwitch": "Автопереключение",
 	"profileroo.config.generic.prettyName.autoSwitch": "Автопереключение",
-	"profileroo.config.generic.comment.autoSwitch": "При входе на сервер или в мир включать профиль\nпо правилам со вкладки «Серверы»",
+	"profileroo.config.generic.comment.autoSwitch": "При входе на сервер или в мир включать профиль\nпо правилам со вкладки «Серверы».\nВыключено — профиль меняется только вручную.",
 	"profileroo.config.generic.name.rememberManualChoice": "Запоминать ручной выбор",
 	"profileroo.config.generic.prettyName.rememberManualChoice": "Запоминать ручной выбор",
 	"profileroo.config.generic.comment.rememberManualChoice": "Если на сервере без правила вручную включить профиль,\nдобавить правило «этот сервер → этот профиль».\nСервер, для которого правило уже есть, не трогается.",
@@ -33,6 +33,9 @@
 	"profileroo.config.hotkey.name.resetProfile": "Сбросить к сохранённому",
 	"profileroo.config.hotkey.prettyName.resetProfile": "Сбросить к сохранённому",
 	"profileroo.config.hotkey.comment.resetProfile": "Отменить изменения, сделанные после последнего сохранения\nвключённого профиля",
+	"profileroo.config.hotkey.name.toggleAutoSwitch": "Вкл/выкл автопереключение",
+	"profileroo.config.hotkey.prettyName.toggleAutoSwitch": "Вкл/выкл автопереключение",
+	"profileroo.config.hotkey.comment.toggleAutoSwitch": "Включить или выключить автопереключение профилей при входе.\nВручную переключаться можно всегда.",
 
 	"profileroo.config.profile_hotkey.comment": "Включить профиль %s",
 
@@ -79,6 +82,8 @@
 	"profileroo.message.locked": "Профиль %s закреплён: изменения в игре в него не сохраняются, каждый вход начинается с сохранённых настроек",
 
 	"profileroo.message.unlocked": "Профиль %s откреплён: изменения снова сохраняются в него",
+	"profileroo.message.auto_on": "Автопереключение включено: при входе профиль выбирается по правилам",
+	"profileroo.message.auto_off": "Автопереключение выключено: профиль меняется только вручную",
 
 	"profileroo.message.bound": "Правило: %s → %s",
 
@@ -104,10 +109,11 @@
 	"profileroo.command.here": "Здесь %s → профиль %s (%s)",
 
 	"profileroo.command.help_hint": "%s help — все команды",
+	"profileroo.command.auto_off_note": "Автопереключение выключено — включить: %s auto on",
 
 	"profileroo.command.usage": "Так: %s",
 
-	"profileroo.command.help": "#profile — профили и что включится здесь\n#profile <имя> — включить профиль\n#profile next | prev — следующий / предыдущий\n#profile save [имя] — записать текущие настройки в профиль\n#profile reset — отменить несохранённые изменения\n#profile create <имя> — новый профиль из текущих настроек\n#profile copy <из> <в> | rename <старое> <новое> | delete <имя>\n#profile lock [имя] | unlock [имя] — закрепить / открепить\n#profile bind [имя] — привязать этот сервер к профилю\n#profile unbind — убрать привязку этого сервера\n#profile gui — открыть меню",
+	"profileroo.command.help": "#profile — профили и что включится здесь\n#profile <имя> — включить профиль\n#profile next | prev — следующий / предыдущий\n#profile save [имя] — записать текущие настройки в профиль\n#profile reset — отменить несохранённые изменения\n#profile create <имя> — новый профиль из текущих настроек\n#profile copy <из> <в> | rename <старое> <новое> | delete <имя>\n#profile lock [имя] | unlock [имя] — закрепить / открепить\n#profile auto [on|off] — автопереключение при входе\n#profile bind [имя] — привязать этот сервер к профилю\n#profile unbind — убрать привязку этого сервера\n#profile gui — открыть меню",
 
 	"profileroo.gui.title.configs": "Profileroo %s",
 	"profileroo.gui.title.profiles": "Profileroo — профили",
@@ -145,6 +151,7 @@
 	"profileroo.gui.button.edit": "Шаблон",
 	"profileroo.gui.button.mod_included": "Переключается",
 	"profileroo.gui.button.mod_excluded": "Не трогать",
+	"profileroo.gui.button.auto_switch": "Автопереключение: %s",
 
 	"profileroo.gui.label.active": "Включён: %s",
 	"profileroo.gui.label.not_in_world": "не в мире",
@@ -154,6 +161,10 @@
 	"profileroo.gui.label.keep_current": "не переключать",
 	"profileroo.gui.label.rule_count": "правил: %s",
 	"profileroo.gui.label.applies_here": "работает здесь",
+	"profileroo.gui.label.on": "вкл",
+	"profileroo.gui.label.off": "выкл",
+	"profileroo.gui.label.auto_off": "автопереключение выключено",
+	"profileroo.gui.label.would_apply_here": "подошло бы здесь",
 	"profileroo.gui.label.empty_pattern": "(пустой шаблон)",
 	"profileroo.gui.label.fallback.multiplayer": "Остальные серверы, LAN и Realms",
 	"profileroo.gui.label.fallback.singleplayer": "Остальные одиночные миры",
@@ -182,6 +193,7 @@
 	"profileroo.gui.hover.fallback": "Если ни одно правило не подошло. «Не переключать» — оставить профиль, который включён.",
 	"profileroo.gui.hover.bind_current": "Добавить наверх правило %s → включённый профиль",
 	"profileroo.gui.hover.bind_current_offline": "Работает, когда вы на сервере или в мире",
+	"profileroo.gui.hover.auto_switch": "Вкл — при входе на сервер или в мир профиль выбирается по правилам.\nВыкл — профиль меняется только вручную: кнопкой, хоткеем или #profile.\nЕщё есть хоткей «Вкл/выкл автопереключение» и команда #profile auto.",
 	"profileroo.gui.hover.mod_toggle": "«Не трогать» — профили не сохраняют и не меняют настройки этого мода",
 	"profileroo.gui.hover.mod_in_active": "Настройки мода есть во включённом профиле %s",
 	"profileroo.gui.hover.mod_not_in_active": "Во включённом профиле %s настроек этого мода пока нет — появятся при следующем сохранении"

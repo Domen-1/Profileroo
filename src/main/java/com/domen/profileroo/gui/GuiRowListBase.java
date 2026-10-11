@@ -8,6 +8,7 @@ import com.domen.profileroo.profile.OpResult;
 import com.domen.profileroo.profile.ProfileManager;
 import fi.dy.masa.malilib.gui.GuiBase;
 import fi.dy.masa.malilib.gui.GuiListBase;
+import fi.dy.masa.malilib.gui.button.ButtonGeneric;
 import fi.dy.masa.malilib.render.GuiContext;
 import fi.dy.masa.malilib.util.InfoUtils;
 import fi.dy.masa.malilib.util.StringUtils;
@@ -62,6 +63,22 @@ public abstract class GuiRowListBase<T> extends GuiListBase<T, WidgetRow<T>, Wid
 		this.initGui();
 	}
 
+	/** The "auto switch: on/off" toggle, right-aligned at {@code right}. Returns its left edge. */
+	protected int addAutoSwitchButton(int right, int y) {
+		ProfileManager manager = ProfileManager.getInstance();
+		String state = manager.isAutoSwitch()
+				? GuiBase.TXT_GREEN + StringUtils.translate("profileroo.gui.label.on")
+				: GuiBase.TXT_RED + StringUtils.translate("profileroo.gui.label.off");
+		ButtonGeneric button = new ButtonGeneric(right, y, -1, 20, StringUtils.translate("profileroo.gui.button.auto_switch", state + GuiBase.TXT_RST));
+		button.setX(right - button.getWidth());
+		button.setHoverStrings(WidgetRow.splitLines(StringUtils.translate("profileroo.gui.hover.auto_switch")));
+		this.addButton(button, (b, mouseButton) -> {
+			this.show(manager.setAutoSwitch(!manager.isAutoSwitch()));
+			this.refresh();
+		});
+		return button.getX();
+	}
+
 	public void show(OpResult result) {
 		InfoUtils.showGuiMessage(result.type(), result.key(), result.args());
 	}
@@ -70,6 +87,9 @@ public abstract class GuiRowListBase<T> extends GuiListBase<T, WidgetRow<T>, Wid
 	protected String statusLine() {
 		ProfileManager manager = ProfileManager.getInstance();
 		String active = StringUtils.translate("profileroo.gui.label.active", GuiBase.TXT_GREEN + manager.activeName() + GuiBase.TXT_RST);
+		if (!manager.isAutoSwitch()) {
+			active += GuiBase.TXT_GRAY + "  ·  " + GuiBase.TXT_RED + StringUtils.translate("profileroo.gui.label.auto_off");
+		}
 		SessionInfo session = manager.session();
 		if (session == null) {
 			return active + GuiBase.TXT_GRAY + "  ·  " + StringUtils.translate("profileroo.gui.label.not_in_world");
